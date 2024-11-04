@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voting System DApp</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Voting System DApp</h1>
+      <div id="accountInfo">
+        <p>Connected Account: <span id="account"></span></p>
+        <button onclick="connectWallet()">Connect Wallet</button>
+      </div>
+
+      <div class="action-section">
+        <div id="adminActions">
+          <h2>Admin Actions</h2>
+          <input type="text" id="candidateName" placeholder="Candidate Name" />
+          <button onclick="addCandidate()">Add Candidate</button>
+          <button onclick="startElection()">Start Election</button>
+          <button onclick="endElection()">End Election</button>
+        </div>
+
+        <div id="voterActions">
+          <h2>Voter Actions</h2>
+          <button onclick="registerVoter()">Register Voter</button>
+          <input
+            type="number"
+            id="voteCandidateId"
+            placeholder="Candidate ID"
+          />
+          <button onclick="castVote()">Cast Vote</button>
+        </div>
+      </div>
+
+      <div id="candidates-list">
+        <button onclick="showCandidates()">Show Candidates</button>
+      </div>
+
+      <div id="results">
+        <h2>Election Results</h2>
+        <button onclick="getResults()">Get Results</button>
+        <pre id="resultsOutput"></pre>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
